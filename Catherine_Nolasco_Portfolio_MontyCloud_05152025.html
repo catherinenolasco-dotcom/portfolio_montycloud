@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catherine Nolasco — People Operations Manager | MontyCloud</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:       #0A1628;
+    --cloud:      #1B3A6B;
+    --sky:        #2563EB;
+    --ice:        #60A5FA;
+    --mint:       #10B981;
+    --amber:      #F59E0B;
+    --cream:      #F8F6F1;
+    --warm-white: #FEFCF8;
+    --ink:        #1A1A2E;
+    --slate:      #4A5568;
+    --mist:       #CBD5E0;
+    --card-bg:    #FFFFFF;
+    --shadow:     0 4px 24px rgba(10,22,40,0.10);
+    --shadow-lg:  0 12px 48px rgba(10,22,40,0.16);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,22,40,0.96);
+    backdrop-filter: blur(12px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 60px;
+    border-bottom: 1px solid rgba(96,165,250,0.15);
+  }
+  .nav-brand {
+    font-family: 'DM Serif Display', serif;
+    color: var(--ice); font-size: 18px; letter-spacing: -0.3px;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.65); text-decoration: none;
+    font-size: 13px; font-weight: 500; letter-spacing: 0.5px;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ice); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--navy) 0%, #0F2347 50%, #162D5A 100%);
+    display: flex; align-items: center;
+    padding: 80px 48px 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -150px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(16,185,129,0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 200px 1fr; gap: 64px; align-items: center;
+    position: relative; z-index: 1;
+  }
+  .hero-photo-wrap {
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  .hero-photo {
+    width: 180px; height: 180px; border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(96,165,250,0.5);
+    box-shadow: 0 0 0 8px rgba(37,99,235,0.12), var(--shadow-lg);
+  }
+  .photo-placeholder {
+    width: 180px; height: 180px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--cloud), var(--sky));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 56px;
+    border: 3px solid rgba(96,165,250,0.5);
+    box-shadow: 0 0 0 8px rgba(37,99,235,0.12), var(--shadow-lg);
+  }
+  .shrm-badge {
+    background: rgba(16,185,129,0.15);
+    border: 1px solid rgba(16,185,129,0.35);
+    color: #34D399; font-size: 11px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 20px;
+  }
+  .hero-text { color: white; }
+  .hero-eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--ice);
+    margin-bottom: 12px; opacity: 0.8;
+  }
+  .hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.05; letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+  .hero-name span { color: var(--ice); }
+  .hero-subtitle {
+    font-size: 16px; color: rgba(255,255,255,0.70);
+    font-weight: 300; line-height: 1.6; margin-bottom: 28px;
+    max-width: 580px;
+  }
+  .match-banner {
+    background: rgba(16,185,129,0.12);
+    border: 1px solid rgba(16,185,129,0.30);
+    border-radius: 10px; padding: 14px 20px;
+    margin-bottom: 32px; max-width: 620px;
+  }
+  .match-banner p {
+    font-size: 13px; color: #6EE7B7; font-weight: 500;
+    line-height: 1.7;
+  }
+  .match-banner p strong { color: #34D399; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--sky); color: white;
+    padding: 12px 28px; border-radius: 8px;
+    font-weight: 600; font-size: 14px; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.45); }
+  .btn-secondary {
+    background: transparent; color: var(--ice);
+    padding: 12px 28px; border-radius: 8px;
+    font-weight: 500; font-size: 14px; text-decoration: none;
+    border: 1px solid rgba(96,165,250,0.40);
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(96,165,250,0.10); border-color: var(--ice); }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 48px; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--sky);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.15; letter-spacing: -0.5px;
+    color: var(--navy); margin-bottom: 40px;
+  }
+
+  /* ── ABOUT ── */
+  .about { background: var(--cream); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+  }
+  .about-text p {
+    font-size: 16px; line-height: 1.8; color: var(--slate);
+    margin-bottom: 20px;
+  }
+  .about-text p strong { color: var(--navy); font-weight: 600; }
+  .about-facts { display: flex; flex-direction: column; gap: 16px; }
+  .fact-card {
+    background: white; border-radius: 12px; padding: 20px 24px;
+    border-left: 3px solid var(--sky);
+    box-shadow: var(--shadow);
+  }
+  .fact-card .fact-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--sky); margin-bottom: 4px;
+  }
+  .fact-card .fact-value {
+    font-size: 15px; color: var(--navy); font-weight: 500; line-height: 1.5;
+  }
+
+  /* ── IMPACT ── */
+  .impact { background: var(--navy); }
+  .impact .section-title { color: white; }
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .impact-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(96,165,250,0.15);
+    border-radius: 14px; padding: 28px 24px;
+    transition: transform 0.25s, background 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .impact-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--sky), var(--mint));
+    opacity: 0; transition: opacity 0.25s;
+  }
+  .impact-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.08); }
+  .impact-card:hover::before { opacity: 1; }
+  .impact-icon { font-size: 28px; margin-bottom: 14px; }
+  .impact-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px; color: var(--ice); letter-spacing: -1px;
+    line-height: 1; margin-bottom: 6px;
+  }
+  .impact-label { font-size: 13px; color: rgba(255,255,255,0.60); line-height: 1.5; }
+
+  /* ── BRIDGE MATCH ── */
+  .bridge { background: white; }
+  .bridge-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .bridge-card {
+    background: var(--cream); border-radius: 14px; padding: 24px;
+    border: 1px solid rgba(37,99,235,0.10);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .bridge-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+  .bridge-value {
+    font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--sky); margin-bottom: 6px;
+  }
+  .bridge-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px; color: var(--navy); margin-bottom: 10px;
+  }
+  .bridge-text { font-size: 14px; color: var(--slate); line-height: 1.65; }
+
+  /* ── EXPERIENCE ── */
+  .experience { background: var(--cream); }
+  .timeline { position: relative; padding-left: 40px; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 12px; top: 8px; bottom: 8px;
+    width: 2px; background: linear-gradient(to bottom, var(--sky), rgba(37,99,235,0.1));
+  }
+  .timeline-item {
+    position: relative; margin-bottom: 44px;
+    opacity: 0; transform: translateX(-16px);
+    animation: slideIn 0.5s ease forwards;
+  }
+  .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+  .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+  .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+  .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+  .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+  .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+  .timeline-item:nth-child(7) { animation-delay: 0.7s; }
+  .timeline-item:nth-child(8) { animation-delay: 0.8s; }
+  .timeline-item:nth-child(9) { animation-delay: 0.9s; }
+
+  @keyframes slideIn {
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .timeline-dot {
+    position: absolute; left: -34px; top: 14px;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: white;
+    border: 2px solid rgba(37,99,235,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; box-shadow: var(--shadow);
+  }
+  .timeline-card {
+    background: white; border-radius: 14px; padding: 28px 32px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(37,99,235,0.07);
+  }
+  .timeline-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 8px; margin-bottom: 6px;
+  }
+  .timeline-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px; color: var(--navy); letter-spacing: -0.3px;
+  }
+  .timeline-dates {
+    font-size: 12px; color: var(--sky); font-weight: 600;
+    letter-spacing: 0.5px; white-space: nowrap;
+    background: rgba(37,99,235,0.08); padding: 4px 10px; border-radius: 20px;
+  }
+  .timeline-company {
+    font-size: 14px; color: var(--slate); margin-bottom: 16px; font-weight: 500;
+  }
+  .timeline-company .tag {
+    display: inline-block;
+    background: rgba(37,99,235,0.07);
+    color: var(--sky); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; margin-left: 6px;
+  }
+  .timeline-bullets { list-style: none; }
+  .timeline-bullets li {
+    font-size: 14px; color: var(--slate); line-height: 1.65;
+    padding: 5px 0 5px 18px; position: relative;
+  }
+  .timeline-bullets li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--sky); font-size: 12px; top: 6px;
+  }
+  .achieve-box {
+    margin-top: 14px; padding: 12px 16px;
+    background: rgba(16,185,129,0.06);
+    border-left: 3px solid var(--mint);
+    border-radius: 0 8px 8px 0;
+    font-size: 13px; color: #065F46; font-weight: 500; line-height: 1.5;
+  }
+
+  /* ── SKILLS ── */
+  .skills { background: white; }
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .skill-category {
+    background: var(--cream); border-radius: 14px; padding: 24px;
+  }
+  .skill-cat-title {
+    font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--sky); margin-bottom: 14px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag {
+    background: white; border: 1px solid rgba(37,99,235,0.18);
+    color: var(--navy); font-size: 12px; font-weight: 500;
+    padding: 5px 12px; border-radius: 20px;
+    transition: all 0.2s;
+  }
+  .skill-tag:hover { background: var(--sky); color: white; border-color: var(--sky); }
+  .skill-tag.highlight {
+    background: rgba(37,99,235,0.08); border-color: rgba(37,99,235,0.30);
+    color: var(--sky); font-weight: 600;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 60px 48px; text-align: center;
+    color: rgba(255,255,255,0.65);
+  }
+  footer h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px; color: white; margin-bottom: 12px;
+  }
+  footer p { font-size: 15px; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .footer-contacts { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 40px; }
+  .footer-contact {
+    color: var(--ice); text-decoration: none; font-size: 14px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px;
+    padding: 8px 18px; border: 1px solid rgba(96,165,250,0.25); border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .footer-contact:hover { background: rgba(96,165,250,0.1); border-color: var(--ice); }
+  .footer-credit { font-size: 12px; color: rgba(255,255,255,0.30); margin-top: 40px; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-text > * {
+    opacity: 0; animation: fadeUp 0.6s ease forwards;
+  }
+  .hero-eyebrow   { animation-delay: 0.1s; }
+  .hero-name      { animation-delay: 0.2s; }
+  .hero-subtitle  { animation-delay: 0.3s; }
+  .match-banner   { animation-delay: 0.4s; }
+  .hero-ctas      { animation-delay: 0.5s; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--navy); }
+  .testimonials .section-title { color: white; }
+  .testimonials .section-label { color: var(--ice); }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(96,165,250,0.15);
+    border-radius: 16px; padding: 28px;
+    position: relative; transition: transform 0.25s, background 0.25s;
+    display: flex; flex-direction: column;
+  }
+  .testimonial-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.08); }
+  .testimonial-quote {
+    font-size: 52px; line-height: 1;
+    color: var(--sky); opacity: 0.35;
+    font-family: 'DM Serif Display', serif;
+    margin-bottom: 4px;
+  }
+  .testimonial-text {
+    font-size: 14px; color: rgba(255,255,255,0.82);
+    line-height: 1.78; margin-bottom: 20px; font-style: italic;
+    flex: 1;
+  }
+  .testimonial-source {
+    display: flex; align-items: center; gap: 12px;
+    border-top: 1px solid rgba(96,165,250,0.12);
+    padding-top: 16px; margin-top: auto;
+  }
+  .testimonial-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--sky), var(--mint));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .testimonial-name { font-size: 13px; font-weight: 600; color: white; }
+  .testimonial-role { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+  .testimonial-platform {
+    margin-left: auto; font-size: 10px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 4px;
+  }
+  .platform-slack    { background: rgba(74,144,226,0.20); color: #7AB3F0; }
+  .platform-email    { background: rgba(16,185,129,0.15); color: #34D399; }
+  .platform-linkedin { background: rgba(10,102,194,0.25); color: #60A5FA; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 90px 24px 48px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+    .hero-photo-wrap { margin: 0 auto; }
+    .hero-ctas { justify-content: center; }
+    section { padding: 60px 24px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .timeline { padding-left: 28px; }
+    footer { padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">Cat Nolasco</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#bridge">BRIDGE Fit</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-photo-wrap">
+      <img src="catherine_photo.jpeg" alt="Catherine Nolasco" class="hero-photo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="photo-placeholder" style="display:none;">👩‍💼</div>
+      <div class="shrm-badge">SHRM-CP Certified</div>
+    </div>
+    <div class="hero-text">
+      <div class="hero-eyebrow">Candidate for People Operations Manager · MontyCloud</div>
+      <h1 class="hero-name">Catherine <span>Nolasco</span></h1>
+      <p class="hero-subtitle">
+        13+ Years Building People Operations Infrastructure in High-Growth SaaS &amp; VC-Backed Startups &nbsp;·&nbsp; Recruiting, Onboarding, Compliance &amp; Total Rewards &nbsp;·&nbsp; US–India Distributed Teams
+      </p>
+      <div class="match-banner">
+        <p>
+          <strong>✓ Strong match for MontyCloud</strong> &nbsp;·&nbsp;
+          CFO-reporting experience at Prezent AI &amp; Ridecell &nbsp;·&nbsp;
+          Series B → C scaling expertise &nbsp;·&nbsp;
+          100% offer acceptance rate &amp; &lt;30-day time-to-hire &nbsp;·&nbsp;
+          TriNet &amp; Rippling PEO fluency &nbsp;·&nbsp;
+          India HR team liaison
+        </p>
+      </div>
+      <div class="hero-ctas">
+        <a href="mailto:catherine.nolasco@gmail.com" class="btn-primary">📧 Get In Touch</a>
+        <a href="https://linkedin.com/in/catherinenolasco" target="_blank" class="btn-secondary">LinkedIn Profile →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="section-label">Who I Am</div>
+    <h2 class="section-title">The Operator Behind the People Strategy</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm a <strong>People Operations Manager with 13+ years of progressive HR experience</strong> inside high-growth SaaS and VC-backed technology companies — including two Series B→C startups. I've spent my career building the people infrastructure that lets companies scale without breaking: structured onboarding, compliant HRIS systems, performance frameworks tied to total rewards, and employee relations programs that actually work.
+        </p>
+        <p>
+          At <strong>Ridecell</strong>, I grew from People Ops Manager to Director over seven years, reporting to the CFO — scaling a 300+ person global team across five international jurisdictions. At <strong>Prezent AI</strong>, I stepped into a 500-person AI SaaS company and reported directly to the CFO and CEO, executing a full compliance audit and rebuilding the people operations infrastructure from the ground up.
+        </p>
+        <p>
+          I've worked closely with <strong>India-based HR teams</strong> at both companies, managing the complexities of distributed, multinational workforces while keeping values and culture tightly aligned. I understand what it takes to build a people function that's both operationally tight and genuinely human — and MontyCloud's BRIDGE values describe exactly the kind of environment where I do my best work.
+        </p>
+      </div>
+      <div class="about-facts">
+        <div class="fact-card">
+          <div class="fact-label">Current Location</div>
+          <div class="fact-value">San Francisco Bay Area, CA — Open to Remote</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-label">Years of Experience</div>
+          <div class="fact-value">13+ Years Progressive HR & People Operations</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-label">CFO Reporting</div>
+          <div class="fact-value">Prezent AI (CFO & CEO) · Ridecell (CFO) — mirrors MontyCloud's reporting structure exactly</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-label">Series B Expertise</div>
+          <div class="fact-value">Joined Ridecell at Series B · Scaled through Series C · Ready for MontyCloud's next stage</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-label">Certification</div>
+          <div class="fact-value">SHRM-CP · Society for Human Resource Management · Expires Dec 2026</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-label">Systems Fluency</div>
+          <div class="fact-value">Rippling · TriNet · ADP Workforce Now · Greenhouse · Keka · Workday · Lattice</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="impact" id="impact">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--ice);">By the Numbers</div>
+    <h2 class="section-title">Impact That Speaks for Itself</h2>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-icon">⚡</div>
+        <div class="impact-number">&lt;30</div>
+        <div class="impact-label">Days average time-to-hire, including C-Suite &amp; executive roles</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🎯</div>
+        <div class="impact-number">100%</div>
+        <div class="impact-label">Offer acceptance rate across all roles recruited</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🚀</div>
+        <div class="impact-number">75%</div>
+        <div class="impact-label">Onboarding efficiency improvement through program redesign</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">📋</div>
+        <div class="impact-number">100%</div>
+        <div class="impact-label">Mandatory compliance signature completion enforced org-wide</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🌍</div>
+        <div class="impact-number">5+</div>
+        <div class="impact-label">Global jurisdictions managed (US, Canada, Europe, India, Japan)</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🔒</div>
+        <div class="impact-number">100%</div>
+        <div class="impact-label">I-9 reverification compliance &amp; SOC 2 audit readiness</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">📉</div>
+        <div class="impact-number">30%</div>
+        <div class="impact-label">Reduction in onboarding cycle time via process &amp; automation redesign</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🏢</div>
+        <div class="impact-number">13+</div>
+        <div class="impact-label">Years building people ops infrastructure across 9 companies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRIDGE MATCH -->
+<section class="bridge" id="bridge">
+  <div class="section-inner">
+    <div class="section-label">Culture Alignment</div>
+    <h2 class="section-title">How I Live MontyCloud's BRIDGE Values</h2>
+    <div class="bridge-grid">
+      <div class="bridge-card">
+        <div class="bridge-value">B</div>
+        <div class="bridge-title">Build Strong Connections</div>
+        <div class="bridge-text">At Ridecell, I built the bridge between US and India HR teams — sharing best practices, coordinating cross-timezone onboarding, and ensuring global values alignment across five jurisdictions over seven years.</div>
+      </div>
+      <div class="bridge-card">
+        <div class="bridge-value">R</div>
+        <div class="bridge-title">Responsibility & Integrity</div>
+        <div class="bridge-text">I own compliance end-to-end — from I-9 audits to SOC 2 readiness to multi-state FLSA reviews. At Prezent AI, I executed a 60-day compliance audit that surfaced critical gaps and redesigned the entire control framework.</div>
+      </div>
+      <div class="bridge-card">
+        <div class="bridge-value">I</div>
+        <div class="bridge-title">Innovate with Curiosity</div>
+        <div class="bridge-text">I redesigned onboarding from scratch at Munchery (75% efficiency gain), implemented SAP SuccessFactors at Dolby, and built automated HRIS governance workflows at Ridecell — always asking how processes can work smarter.</div>
+      </div>
+      <div class="bridge-card">
+        <div class="bridge-value">D</div>
+        <div class="bridge-title">Design for Simplicity</div>
+        <div class="bridge-text">My manager playbooks, 30-60-90 day onboarding frameworks, and employee handbooks are designed to be clear, usable, and actually followed — not compliance theater. Simplicity that scales is the goal.</div>
+      </div>
+      <div class="bridge-card">
+        <div class="bridge-value">G</div>
+        <div class="bridge-title">Grow Trust Through Action</div>
+        <div class="bridge-text">Seven years at Ridecell — promoted three times from Manager to Director — because I delivered. Trust is earned through consistency, and I show up with the same care and precision every time, whether it's a PIP or a board-level headcount report.</div>
+      </div>
+      <div class="bridge-card">
+        <div class="bridge-value">E</div>
+        <div class="bridge-title">Elevate the Customer</div>
+        <div class="bridge-text">To me, employees are internal customers. The pulse surveys I ran, the grievance mechanisms I built, the manager coaching I delivered — all of it was designed to make the employee experience excellent so the business could thrive.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="section-inner">
+    <div class="section-label">Career Timeline</div>
+    <h2 class="section-title">13 Years · 9 Roles · One Craft</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot">🤖</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-title">Head of People Operations</div>
+            <div class="timeline-dates">Feb 2026 – Apr 2026</div>
+          </div>
+          <div class="timeline-company">Prezent AI · San Francisco, CA (Remote) <span class="tag">500+ employees</span><span class="tag">$70M+ AI SaaS</span><span class="tag">Reported to CFO & CEO</span></div>
+          <ul class="timeline-bullets">
+            <li>Executed 60-day full-scope People Ops compliance audit; designed scalable target operating model for SOC 2 readiness</li>
+            <li>Led global HR policy lifecycle management aligned with FLSA, FMLA, ADA, ACA, PWFA, and India labor law</li>
+            <li>Achieved 100% mandatory compliance signature completion across the entire organization</li>
+            <li>Established I-9 governance standards achieving 100% reverification compliance across US and India workforce</li>
+            <li>Served as strategic immigration liaison for H-1B, STEM OPT, and green card filings</li>
+          </ul>
+          <div class="achieve-box">🔒 Built audit-ready people infrastructure from the ground up, reporting to both CFO and CEO</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">🚗</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-title">Director of People Operations</div>
+            <div class="timeline-dates">Dec 2018 – Jan 2026</div>
+          </div>
+          <div class="timeline-company">Ridecell Inc. · San Francisco, CA (Remote) <span class="tag">300+ employees</span><span class="tag">Series B → C</span><span class="tag">Global SaaS</span><span class="tag">Reported to CFO</span></div>
+          <ul class="timeline-bullets">
+            <li>Led recruiting coordination including C-Suite & executive hiring — time-to-hire under 30 days, 100% offer acceptance rate</li>
+            <li>Designed 30-60-90 day onboarding programs, manager playbooks, and onboarding logistics for US–India distributed workforce</li>
+            <li>Designed performance management philosophy & annual review cycle with direct link to total rewards and compensation planning</li>
+            <li>Processed payroll & benefits enrollments in coordination with PEO and Finance; tracked equity grant schedules and vesting</li>
+            <li>Administered formal grievance mechanism; coached first-line managers on PIPs, difficult feedback, and team dynamics</li>
+            <li>Authored employee handbooks across 5 jurisdictions; established FLSA reviews, job classification audits, mandatory training tracking</li>
+            <li>Coordinated pulse surveys and team-building rituals to monitor cultural health and BRIDGE-style values alignment</li>
+            <li>Liaised regularly with India HR team to share best practices and ensure global values alignment</li>
+          </ul>
+          <div class="achieve-box">📈 Promoted Manager → Senior Manager → Director over 7 years · Scaled through Series B and into Series C</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">🍔</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-title">Manager, People Operations</div>
+            <div class="timeline-dates">Oct 2017 – Dec 2018</div>
+          </div>
+          <div class="timeline-company">Munchery · San Francisco, CA <span class="tag">700+ employees</span><span class="tag">Multi-City Food Delivery</span></div>
+          <ul class="timeline-bullets">
+            <li>Redesigned New Hire Orientation Program — improved onboarding efficiency by 75%</li>
+            <li>Reduced onboarding cycle time by 30% through process redesign and automation</li>
+            <li>Managed compliance programs: I-9 audits, EEO-1, benefits administration, multi-state employee relations</li>
+          </ul>
+          <div class="achieve-box">🚀 75% onboarding efficiency gain · 30% cycle time reduction</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">🌐</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-title">HR Generalist (Contract)</div>
+            <div class="timeline-dates">Jul 2017 – Oct 2017</div>
+          </div>
+          <div class="timeline-company">Off the Grid · San Francisco, CA <span class="tag">Food Marketplace & Events</span></div>
+          <ul class="timeline-bullets">
+            <li>Supported general HR operations, employee relations, onboarding administration, and HR compliance</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">💰</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-title">Employee Success Generalist (Contract)</div>
+            <div class="timeline-dates">Feb 2017 – Jul 2017</div>
+          </div>
+          <div class="timeline-company">FinancialForce (Certinia) · San Francisco Bay Area <span class="tag">B2B SaaS</span></div>
+          <ul class="timeline-bullets">
+            <li>Trained 150+ employees on HR systems processes, functionalities, and best practices</li>
+            <li>Managed end-to-end onboarding activities; maintained compliance with audit standards and internal controls</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">🔊</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-title">HR Operations Analyst</div>
+            <div class="timeline-dates">Sep 2016 – Feb 2017</div>
+          </div>
+          <div class="timeline-company">Dolby Laboratories · San Francisco, CA <span class="tag">Global Technology</span></div>
+          <ul class="timeline-bullets">
+            <li>Led implementation of SAP SuccessFactors including configuration, testing, documentation, and training</li>
+            <li>Designed New Hire and Termination Checklists; developed internal audit procedures and data governance frameworks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">⛰️</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-title">HR Specialist</div>
+            <div class="timeline-dates">Feb 2015 – Sep 2016</div>
+          </div>
+          <div class="timeline-company">VF Corporation (The North Face / lucy Activewear) · Alameda, CA <span class="tag">1,000+ Employees</span></div>
+          <ul class="timeline-bullets">
+            <li>Managed onboarding for ~20 new hires per week; administered records in Workday and Taleo</li>
+            <li>Maintained I-9 documentation, E-Verify records; partnered with HRBPs on promotions, transfers, and PIPs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">🦷</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-title">HRIS Coordinator</div>
+            <div class="timeline-dates">Apr 2014 – Feb 2015</div>
+          </div>
+          <div class="timeline-company">Pacific Dental Services · Irvine, CA <span class="tag">2,500+ Employees</span></div>
+          <ul class="timeline-bullets">
+            <li>Administered HRIS transactions for 2,500+ employee national workforce; maintained employee lifecycle records</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">🏄</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-title">Human Resources Coordinator</div>
+            <div class="timeline-dates">Jan 2013 – Apr 2014</div>
+          </div>
+          <div class="timeline-company">Quiksilver / Roxy / DC Inc. · Huntington Beach, CA <span class="tag">Global Action Sports</span></div>
+          <ul class="timeline-bullets">
+            <li>Managed employee lifecycle transactions in PeopleSoft; audited 6,000+ employee files for I-9, payroll, and benefits compliance</li>
+            <li>Contributed to New Hire Orientation redesign</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-inner">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">Skills That Match What MontyCloud Needs</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <div class="skill-cat-title">HRIS & PEO Systems</div>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">Rippling</span>
+          <span class="skill-tag highlight">TriNet</span>
+          <span class="skill-tag highlight">Keka</span>
+          <span class="skill-tag">ADP Workforce Now</span>
+          <span class="skill-tag">Workday</span>
+          <span class="skill-tag">SAP SuccessFactors</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title">ATS & Recruiting Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">Greenhouse</span>
+          <span class="skill-tag highlight">Ashby</span>
+          <span class="skill-tag">Workable</span>
+          <span class="skill-tag">Taleo</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title">People Operations</div>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">30-60-90 Onboarding</span>
+          <span class="skill-tag highlight">Recruiting Coordination</span>
+          <span class="skill-tag highlight">Total Rewards</span>
+          <span class="skill-tag">Equity Grant Tracking</span>
+          <span class="skill-tag">Payroll & Benefits</span>
+          <span class="skill-tag">Manager Playbooks</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title">Performance & Culture</div>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">Performance Management</span>
+          <span class="skill-tag highlight">PIPs & Coaching</span>
+          <span class="skill-tag highlight">Pulse Surveys</span>
+          <span class="skill-tag">Conflict Resolution</span>
+          <span class="skill-tag">Grievance Management</span>
+          <span class="skill-tag">Lattice · 15Five</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title">Compliance & Legal</div>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">Multi-State Employment Law</span>
+          <span class="skill-tag highlight">FLSA · FMLA · ADA · ACA</span>
+          <span class="skill-tag highlight">I-9 / E-Verify</span>
+          <span class="skill-tag">SOC 2 Readiness</span>
+          <span class="skill-tag">ERISA · HIPAA · COBRA</span>
+          <span class="skill-tag">Immigration (H-1B, OPT)</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title">Collaboration & Productivity</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Slack</span>
+          <span class="skill-tag">Google Workspace</span>
+          <span class="skill-tag">Microsoft Office Suite</span>
+          <span class="skill-tag">DocuSign</span>
+          <span class="skill-tag">Checkr</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="section-inner">
+    <div class="section-label">What People Say</div>
+    <h2 class="section-title">Colleagues & Leaders, In Their Own Words</h2>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Thank you for making my onboarding so smooth and a lovely experience. Wishing you all the best.</p>
+        <div class="testimonial-source">
+          <div class="testimonial-avatar">👩‍💼</div>
+          <div>
+            <div class="testimonial-name">Francine Carrick</div>
+            <div class="testimonial-role">President, Prezent Vivo · Life Sciences Communications Expert</div>
+          </div>
+          <span class="testimonial-platform platform-linkedin">LinkedIn</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">You both did a fantastic job today with the All Hands! Thank you for all the hustle and the quality work — it really shows in the production and results. This meeting has become a staple of our company culture. You both are a HUGE part of the behind the scenes and often front-of-the-line magic ✨</p>
+        <div class="testimonial-source">
+          <div class="testimonial-avatar">⭐</div>
+          <div>
+            <div class="testimonial-name">Jacque</div>
+            <div class="testimonial-role">People & Culture · Ridecell</div>
+          </div>
+          <span class="testimonial-platform platform-slack">Slack</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Really good work on how we have managed costs for our team the past few months. Very grateful to you for being proactive about this and being on top of it. It'll help.</p>
+        <div class="testimonial-source">
+          <div class="testimonial-avatar">💪</div>
+          <div>
+            <div class="testimonial-name">Samyak</div>
+            <div class="testimonial-role">Executive Leadership · Ridecell</div>
+          </div>
+          <span class="testimonial-platform platform-slack">Slack</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Special thanks for helping me out regarding California paid family leave and immigration things. Appreciate your proactiveness for being a helping hand 🙂</p>
+        <div class="testimonial-source">
+          <div class="testimonial-avatar">🤝</div>
+          <div>
+            <div class="testimonial-name">Bhargav</div>
+            <div class="testimonial-role">Employee · Ridecell</div>
+          </div>
+          <span class="testimonial-platform platform-slack">Slack</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">You bring the best out in people by being you. Even better, you can capture it.</p>
+        <div class="testimonial-source">
+          <div class="testimonial-avatar">🌟</div>
+          <div>
+            <div class="testimonial-name">Jeremy</div>
+            <div class="testimonial-role">Leadership · Ridecell</div>
+          </div>
+          <span class="testimonial-platform platform-slack">Slack</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Thank you for rallying the crowd last week at CONVERGE! Love the energy and sense of fun you brought to the event. Great work!</p>
+        <div class="testimonial-source">
+          <div class="testimonial-avatar">🎉</div>
+          <div>
+            <div class="testimonial-name">Mark Thomas</div>
+            <div class="testimonial-role">Leadership · Ridecell</div>
+          </div>
+          <span class="testimonial-platform platform-email">Email</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+  <h2>Let's Connect</h2>
+  <p>I'd love to learn more about MontyCloud's people operations vision and share how I can help build it. Reach out anytime.</p>
+  <div class="footer-contacts">
+    <a href="mailto:catherine.nolasco@gmail.com" class="footer-contact">📧 catherine.nolasco@gmail.com</a>
+    <a href="tel:6507843774" class="footer-contact">📞 (650) 784-3774</a>
+    <a href="https://linkedin.com/in/catherinenolasco" target="_blank" class="footer-contact">💼 linkedin.com/in/catherinenolasco</a>
+  </div>
+  <div class="footer-credit">Catherine Nolasco · SHRM-CP · People Operations Manager · Candidate for MontyCloud</div>
+</footer>
+
+</body>
+</html>
